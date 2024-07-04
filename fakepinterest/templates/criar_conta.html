@@ -1,22 +1,28 @@
-{% extends "homepage.html" %}
+{% extends "homepage.html" %} {% block titulo %} Criar conta - FakePinterest {%
+endblock %} {% block formulario %}
+<form method="POST" class="popup">
+  {{ form.csrf_token }}
 
-{% block titulo %}
-    Criar conta - FakePinterest
-{% endblock %}
+  <h2>Bem-vindo(a) ao FakePinterest</h2>
 
-{% block formulario %}
-<form method="POST">
-    {{ form.csrf_token }}
-
-    {{ form.email.label() }} {{ form.email() }}
-
-    {{ form.username.label() }} {{ form.username() }}
-
-    {{ form.senha.label() }} {{ form.senha() }}
-
-    {{ form.confirmacao_senha.label() }} {{ form.confirmacao_senha() }}
-    
-    {{ form.botao_confirmacao() }}
+  <div class="div-input">
+    {{ form.email.label(class="label") }} {{ form.email(class="input") }}
+  </div>
+  <div class="div-input">
+    {{ form.username.label(class="label") }} {{ form.username(class="input") }}
+  </div>
+  <div class="div-input">
+    {{ form.senha.label(class="label") }} {{ form.senha(class="input") }}
+  </div>
+  <div class="div-input">
+    {{ form.confirmacao_senha.label(class="label") }} {{
+    form.confirmacao_senha(class="input") }}
+  </div>
+  <div class="div-botao">
+    {{ form.botao_confirmacao(class="botao-login") }}
+    <a href="{{ url_for('homepage') }}" class="link-criarconta"
+      >Já tem uma conta? Faça login</a
+    >
+  </div>
 </form>
 {% endblock %}
-
