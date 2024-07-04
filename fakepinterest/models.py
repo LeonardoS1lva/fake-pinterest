@@ -8,7 +8,7 @@ def load_usuario(id_usuario):
 
 class Usuario(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key=True)
-    username = database.Column(database.String, unique=True,nullable=False)
+    username = database.Column(database.String, unique=True, nullable=False)
     email = database.Column(database.String, unique=True, nullable=False)
     senha = database.Column(database.String, nullable=False)
     fotos = database.relationship("Foto", backref="usuario", lazy=True)

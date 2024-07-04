@@ -6,17 +6,43 @@ endblock %} {% block formulario %}
   <h2>Bem-vindo(a) ao FakePinterest</h2>
 
   <div class="div-input">
-    {{ form.email.label(class="label") }} {{ form.email(class="input") }}
+    {{ form.email.label(class="label") }} 
+    
+    {% if form.email.errors %}
+      {% for error in form.email.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+
+    {{ form.email(class="input") }}
   </div>
   <div class="div-input">
-    {{ form.username.label(class="label") }} {{ form.username(class="input") }}
+    {{ form.username.label(class="label") }} 
+    {% if form.username.errors %}
+      {% for error in form.username.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    {{ form.username(class="input") }}
   </div>
   <div class="div-input">
-    {{ form.senha.label(class="label") }} {{ form.senha(class="input") }}
+    {{ form.senha.label(class="label") }} 
+    {% if form.senha.errors %}
+      {% for error in form.senha.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    {{ form.senha(class="input") }}
   </div>
   <div class="div-input">
-    {{ form.confirmacao_senha.label(class="label") }} {{
-    form.confirmacao_senha(class="input") }}
+    {{ form.confirmacao_senha.label(class="label") }} 
+    {% if form.confirmacao_senha.errors %}
+      {% for error in form.confirmacao_senha.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    
+    {{ form.confirmacao_senha(class="input") }}
   </div>
   <div class="div-botao">
     {{ form.botao_confirmacao(class="botao-login") }}

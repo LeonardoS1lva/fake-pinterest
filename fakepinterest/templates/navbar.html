@@ -1,5 +1,5 @@
 <nav>
-  <div class="logo-pinterest">
+  <a href="{{ url_for('feed') }}" class="logo-pinterest" style="text-decoration: none;">
     <svg height="40" viewBox="-3 -3 82 82" width="40" style="display: block">
       <title>FakePinterest logo</title>
       <circle cx="38" cy="38" fill="white" r="40"></circle>
@@ -9,8 +9,8 @@
         fill-rule="evenodd"
       ></path>
     </svg>
-    <a href="{{ url_for('feed') }}"><h1>FakePinterest</h1></a>
-  </div>
+    <h1>FakePinterest</h1>
+  </a>
 
   <div class="restante-nav">
     <p class="botao-perfil">

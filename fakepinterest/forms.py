@@ -8,6 +8,11 @@ class FormLogin(FlaskForm):
     senha = PasswordField("Senha", validators=[DataRequired()])
     botao = SubmitField("Fazer login")
 
+    def validate_email(self, email):
+        usuario = Usuario.query.filter_by(email=email.data).first()
+        if not usuario:
+            raise ValidationError("Usuário não cadastrado, faça um cadastro para continuar")
+
 class FormCriarConta(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Email()])
     username = StringField("Nome de usuaário", validators=[DataRequired()])
@@ -19,6 +24,11 @@ class FormCriarConta(FlaskForm):
         usuario = Usuario.query.filter_by(email=email.data).first()
         if usuario:
             raise ValidationError("Email já cadastrado, faça login para continuar")
+        
+    def validate_username(self, username):
+        usuario = Usuario.query.filter_by(username=username.data).first()
+        if usuario:
+            raise ValidationError("Nome de usuário já cadastrado, escolha outro")
         
 class FormFoto(FlaskForm):
     foto = FileField("Foto", validators=[DataRequired()])
