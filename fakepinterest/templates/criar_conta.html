@@ -14,7 +14,7 @@ endblock %} {% block formulario %}
       {% endfor %}
     {% endif %}
 
-    {{ form.email(class="input") }}
+    {{ form.email(class="input", placeholder="Email:") }}
   </div>
   <div class="div-input">
     {{ form.username.label(class="label") }} 
@@ -23,7 +23,7 @@ endblock %} {% block formulario %}
         <p style="color: red;">{{ error }}</p>
       {% endfor %}
     {% endif %}
-    {{ form.username(class="input") }}
+    {{ form.username(class="input", placeholder="Nome de usuário:") }}
   </div>
   <div class="div-input">
     {{ form.senha.label(class="label") }} 
@@ -32,7 +32,7 @@ endblock %} {% block formulario %}
         <p style="color: red;">{{ error }}</p>
       {% endfor %}
     {% endif %}
-    {{ form.senha(class="input") }}
+    {{ form.senha(class="input", placeholder="Senha:") }}
   </div>
   <div class="div-input">
     {{ form.confirmacao_senha.label(class="label") }} 
@@ -42,7 +42,7 @@ endblock %} {% block formulario %}
       {% endfor %}
     {% endif %}
     
-    {{ form.confirmacao_senha(class="input") }}
+    {{ form.confirmacao_senha(class="input", placeholder="Confirme a senha:") }}
   </div>
   <div class="div-botao">
     {{ form.botao_confirmacao(class="botao-login") }}
