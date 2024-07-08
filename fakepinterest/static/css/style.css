@@ -239,29 +239,4 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .container {
-    padding: 15px;
-  }
-
-  .bloco-imagem img {
-    height: 30vh;
-  }
-
-  .bloco-add-img {
-    width: 100%;
-  }
-
-  .bloco-add-img .botao-login {
-    width: 100%;
-  }
-
-  .bloco-input-botao {
-    flex-direction: column;
-  }
-
-  .bloco-arquivo {
-    flex-direction: column;
-    align-items: center;
-  }
-
 }
