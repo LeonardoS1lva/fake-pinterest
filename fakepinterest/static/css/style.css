@@ -236,7 +236,19 @@ img {
 
 @media (max-width: 768px) {
   .conteudo {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
+  nav {
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+
+  .popup {
+    width: 75%;
+  }
+
+  .restante-nav{
+    column-gap: 5px;
+  }
 }
